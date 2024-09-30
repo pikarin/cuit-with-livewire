@@ -15,4 +15,12 @@ class CuitPolicy
     {
         return $cuit->user()->is($user);
     }
+
+    /**
+     * Determine whether the user can delete the model.
+     */
+    public function delete(User $user, Cuit $cuit): bool
+    {
+        return $this->update($user, $cuit);
+    }
 }

@@ -25,6 +25,14 @@ $edit = function (Cuit $cuit) {
     $this->getCuits();
 };
 
+$delete = function (Cuit $cuit) {
+    $this->authorize('delete', $cuit);
+
+    $cuit->delete();
+
+    $this->getCuits();
+};
+
 ?>
 
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
@@ -54,6 +62,9 @@ $edit = function (Cuit $cuit) {
                             <x-slot name="content">
                                 <x-dropdown-link wire:click="edit({{ $cuit->id }})">
                                     {{ __('Edit') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link wire:click="delete({{ $cuit->id }})">
+                                    {{ __('Delete') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
