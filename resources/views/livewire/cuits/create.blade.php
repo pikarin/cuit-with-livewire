@@ -12,6 +12,8 @@ $store = function () {
     auth()->user()->cuits()->create($validated);
 
     $this->message = '';
+
+    $this->dispatch('cuit-created');
 };
 
 ?>
