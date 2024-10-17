@@ -20,7 +20,7 @@ class Cuit extends Model
     ];
 
     /**
-     * @return BelongsTo<User, Cuit>
+     * @return BelongsTo<User, $this>
      */
     public function user(): BelongsTo
     {

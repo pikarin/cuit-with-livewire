@@ -4,10 +4,9 @@ namespace App\Notifications;
 
 use App\Models\Cuit;
 use Illuminate\Bus\Queueable;
-use Illuminate\Support\Str;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Str;
 
 class NewCuit extends Notification
 {
@@ -37,11 +36,11 @@ class NewCuit extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->subject("New Cuit from {$this->cuit->user->name}")
-                    ->greeting("New Cuit from {$this->cuit->user->name}")
-                    ->line(Str::limit($this->cuit->message, 50))
-                    ->action('Go to Cuitan', url('/'))
-                    ->line('Thank you for using our application!');
+            ->subject("New Cuit from {$this->cuit->user->name}")
+            ->greeting("New Cuit from {$this->cuit->user->name}")
+            ->line(Str::limit($this->cuit->message, 50))
+            ->action('Go to Cuitan', url('/'))
+            ->line('Thank you for using our application!');
     }
 
     /**

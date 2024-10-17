@@ -6,7 +6,6 @@ use App\Events\CuitCreated;
 use App\Models\User;
 use App\Notifications\NewCuit;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class SendCuitCreatedNotifications implements ShouldQueue
 {

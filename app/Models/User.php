@@ -47,7 +47,7 @@ class User extends Authenticatable
     }
 
     /**
-     * @return HasMany<Cuit>
+     * @return HasMany<Cuit, $this>
      */
     public function cuits(): HasMany
     {
